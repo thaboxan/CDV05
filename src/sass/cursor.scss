@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #131417;
+  transition: all 0.2s linear;
+  cursor: none;
+
+  .cursor {
+    width: 25px;
+    height: 25px;
+    border: 2px solid white;
+    border-radius: 50%;
+    position: fixed;
+    transition: all 0.075s linear;
+    pointer-events: none;
+    background: #fff;
+  }
+
+  .title {
+    color: #fff;
+    font-size: 8rem;
+    letter-spacing: 10px;
+    position: relative;
+    display: block;
+    transition: all 0.4s linear;
+
+    &:hover ~ .cursor {
+      transform: scale(3);
+      mix-blend-mode: difference;
+    }
+  }
+}

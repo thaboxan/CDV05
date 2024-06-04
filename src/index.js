@@ -3,6 +3,23 @@ import canvasDots from './heroCanvas.js';
 import canvasDotsBg from './bgCanvas.js';
 import { doc } from 'prettier';
 
+let title = document.querySelector('.title');
+let curs = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', (e) => {
+  let x = e.pageX;
+  let y = e.pageY;
+  curs.style.left = x - 22 + 'px';
+  curs.style.top = y - 22 + 'px';
+});
+
+document.addEventListener('mouseleave', (e) => {
+  let x = e.pageX;
+  let y = e.pageY;
+  curs.style.left = x - 22 + 'px';
+  curs.style.top = y - 22 + 'px';
+});
+
 window.onload = function () {
   canvasDotsBg();
   canvasDots();
@@ -171,7 +188,8 @@ observerNavProjects.observe(document.querySelector('#projects'));
 
 // form validation
 
-const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const re =
+  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 document.querySelector('#form-submit').addEventListener('click', () => {
   const unameInput = document.querySelector('.contact__form-name');
   const emailInput = document.querySelector('.contact__form-email');
